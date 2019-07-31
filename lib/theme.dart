@@ -7,9 +7,9 @@ ThemeData buildThemeData(){
 
   // return baseTheme.copyWith();
    return baseTheme.copyWith(
-     primaryColor: kPrimaryColor,
-     primaryColorDark: kPrimaryDark,
-     primaryColorLight: kPrimaryLight,
-     accentColor: kSecondaryColor,
+     primaryColor: primaryColor,
+     primaryColorDark: primaryDark,
+     primaryColorLight: primaryLight,
+     accentColor: secondaryColor,
    );
 }

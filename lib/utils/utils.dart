@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
+class AppConfig {
+  static const appName = "Heart String";
+  static const appTagline = "A perfect match for everyone";
+}
+
 class AvailableFonts {
-  static const primaryFont = "Champagne Limousines";
+  static const primaryFont = "Quicksand";
 }
 
 class AvailableImages {
@@ -16,4 +21,8 @@ class AvailableImages {
   static const woman3 = const AssetImage('assets/images/woman3.jpg');
   static const woman4 = const AssetImage('assets/images/woman4.jpg');
   static const woman5 = const AssetImage('assets/images/woman5.jpg');
+
+
+  static const homePage = const AssetImage('assets/images/home_page.png');  
+  static const appLogo = const AssetImage('assets/images/logo.png');  
 }
