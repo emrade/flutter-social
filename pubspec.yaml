@@ -19,6 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  line_icons: ^0.2.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -68,11 +69,8 @@ flutter:
       fonts:
         - asset: assets/fonts/Quicksand-Regular.ttf
         - asset: assets/fonts/Quicksand-Medium.ttf
-          weight: 400
         - asset: assets/fonts/Quicksand-SemiBold.ttf
-          weight: 700
         - asset: assets/fonts/Quicksand-Bold.ttf
-          weight: 900
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social/_routing/routes.dart';
 import 'package:flutter_social/utils/colors.dart';
 import 'package:flutter_social/utils/utils.dart';
 
@@ -31,13 +32,14 @@ class HomePage extends StatelessWidget {
           style: TextStyle(
             color: Colors.white,
             fontSize: 18.0,
+            fontWeight: FontWeight.w500
           ),
         )
       ],
     );
 
     final loginBtn = InkWell(
-      onTap: () {},
+      onTap: () => Navigator.pushNamed(context, loginViewRoute),
       child: Container(
         height: 60.0,
         width: MediaQuery.of(context).size.width,
@@ -51,7 +53,7 @@ class HomePage extends StatelessWidget {
             'LOG IN',
             style: TextStyle(
               fontWeight: FontWeight.w600,
-              fontSize: 24.0,
+              fontSize: 20.0,
               color: Colors.white,
             ),
           ),
@@ -69,7 +71,7 @@ class HomePage extends StatelessWidget {
       ),
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () {},
+        onPressed: () => Navigator.pushNamed(context, registerViewRoute),
         color: Colors.white,
         shape: new RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(7.0),
@@ -78,7 +80,7 @@ class HomePage extends StatelessWidget {
           'SIGN UP',
           style: TextStyle(
             fontWeight: FontWeight.w600,
-            fontSize: 24.0,
+            fontSize: 20.0,
           ),
         ),
       ),
@@ -97,13 +99,12 @@ class HomePage extends StatelessWidget {
     );
 
     return Scaffold(
-        appBar: AppBar(
-          elevation: 0,
-        ),
-        body: Stack(
+      body: Container(
+        child: Stack(
           children: <Widget>[
             Container(
-              color: primaryColor,
+              padding: EdgeInsets.only(top: 70.0),
+              decoration: BoxDecoration(gradient: primaryGradient),
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               child: Column(
@@ -112,18 +113,23 @@ class HomePage extends StatelessWidget {
             ),
             Positioned(
               bottom: 0,
-              child: Container(
-                height: 200.0,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AvailableImages.homePage,
-                    fit: BoxFit.cover,
+              child: Padding(
+                padding: EdgeInsets.only(left: 10.0),
+                child: Container(
+                  height: 300.0,
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AvailableImages.homePage,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
               ),
             )
           ],
-        ));
+        ),
+      ),
+    );
   }
 }
