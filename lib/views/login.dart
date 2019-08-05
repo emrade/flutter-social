@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       child: RaisedButton(
         elevation: 5.0,
-        onPressed: () => Navigator.pushNamed(context, homeViewRoute),
+        onPressed: () => Navigator.pushNamed(context, feedsViewRoute),
         color: Colors.white,
         shape: new RoundedRectangleBorder(
           borderRadius: new BorderRadius.circular(7.0),

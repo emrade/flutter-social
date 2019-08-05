@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social/_routing/routes.dart';
 import 'package:flutter_social/utils/colors.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -111,7 +112,7 @@ class _RegisterPageState extends State<RegisterPage> {
           elevation: 10.0,
           shadowColor: Colors.white70,
           child: MaterialButton(
-            onPressed: () {},
+            onPressed: () => Navigator.of(context).pushNamed(feedsViewRoute),
             child: Text(
               'CREATE ACCOUNT',
               style: TextStyle(
