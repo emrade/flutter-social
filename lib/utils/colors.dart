@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:ui';
 
-const primaryColor = const Color(0xFFFF9F59);
+const primaryColor = const Color(0xFFfbab66);
 const primaryLight = const Color(0xFFFF9F59);
 const primaryDark = const Color(0xFFFF9F59);
 

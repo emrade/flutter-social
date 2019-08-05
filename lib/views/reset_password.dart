@@ -126,27 +126,28 @@ class _ResetPasswordPageState extends State<ResetPasswordPage> {
 
     return Scaffold(
       body: Container(
-          padding: EdgeInsets.only(top: 40.0),
-          decoration: BoxDecoration(gradient: primaryGradient),
-          height: MediaQuery.of(context).size.height,
-          width: MediaQuery.of(context).size.width,
-          child: Column(
-            children: <Widget>[
-              appBar,
-              Container(
-                padding: EdgeInsets.only(left: 30.0, right: 30.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    pageTitle,
-                    resetPasswordForm,
-                    resetPasswordBtn,
-                    newUser
-                  ],
-                ),
-              )
-            ],
-          )),
+        padding: EdgeInsets.only(top: 40.0),
+        decoration: BoxDecoration(gradient: primaryGradient),
+        height: MediaQuery.of(context).size.height,
+        width: MediaQuery.of(context).size.width,
+        child: Column(
+          children: <Widget>[
+            appBar,
+            Container(
+              padding: EdgeInsets.only(left: 30.0, right: 30.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  pageTitle,
+                  resetPasswordForm,
+                  resetPasswordBtn,
+                  newUser
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 }

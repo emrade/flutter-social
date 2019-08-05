@@ -70,7 +70,7 @@ class _LoginPageState extends State<LoginPage> {
           borderSide: BorderSide(color: Colors.white),
         ),
       ),
-      keyboardType: TextInputType.emailAddress,
+      keyboardType: TextInputType.text,
       style: TextStyle(color: Colors.white),
       cursorColor: Colors.white,
       obscureText: true,
