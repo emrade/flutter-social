@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_social/_routing/routes.dart';
 import 'package:flutter_social/views/chat_details.dart';
 import 'package:flutter_social/views/chats.dart';
-import 'package:flutter_social/views/feed.dart';
+import 'package:flutter_social/views/feeds.dart';
 import 'package:flutter_social/views/home.dart';
 import 'package:flutter_social/views/login.dart';
 import 'package:flutter_social/views/notifications.dart';
