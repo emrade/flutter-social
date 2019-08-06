@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social/models/feed.dart';
 import 'package:flutter_social/widgets/feed_card1.dart';
+import 'package:flutter_social/widgets/feed_card2.dart';
+import 'package:flutter_social/widgets/feed_card3.dart';
 
 class FeedsPage extends StatelessWidget {
   @override
@@ -38,7 +40,6 @@ class FeedsPage extends StatelessWidget {
         child: Container(
           color: Colors.grey.withOpacity(0.1),
           padding: EdgeInsets.only(top: 40.0),
-          height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -50,7 +51,19 @@ class FeedsPage extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     pageTitle,
-                    FeedCard1(feed: feeds[0])
+                    FeedCard1(feed: feeds[0]),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    FeedCard2(
+                      feed: feeds[1],
+                    ),
+                    SizedBox(
+                      height: 10.0,
+                    ),
+                    FeedCard3(
+                      feed: feeds[2],
+                    ),
                   ],
                 ),
               )

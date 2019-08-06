@@ -112,7 +112,7 @@ class _RegisterPageState extends State<RegisterPage> {
           elevation: 10.0,
           shadowColor: Colors.white70,
           child: MaterialButton(
-            onPressed: () => Navigator.of(context).pushNamed(feedsViewRoute),
+            onPressed: () => Navigator.of(context).pushNamed(homeViewRoute),
             child: Text(
               'CREATE ACCOUNT',
               style: TextStyle(

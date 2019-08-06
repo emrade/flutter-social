@@ -88,22 +88,19 @@ class FeedCard1 extends StatelessWidget {
       height: 300.0,
       child: Stack(
         children: <Widget>[
-          Container(
-            height: 150.0,
-            width: MediaQuery.of(context).size.width,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(14.0),
-              image: DecorationImage(
-                image: AssetImage(feed.bannerImg),
-                fit: BoxFit.cover,
+          Material(
+            elevation: 5.0,
+            borderRadius: BorderRadius.circular(14.0),
+            child: Container(
+              height: 150.0,
+              width: MediaQuery.of(context).size.width,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14.0),
+                image: DecorationImage(
+                  image: AssetImage(feed.bannerImg),
+                  fit: BoxFit.cover,
+                ),
               ),
-              boxShadow: [
-                BoxShadow(
-                  blurRadius: 3.0,
-                  color: Colors.grey.withOpacity(0.6),
-                  spreadRadius: 3.0,
-                )
-              ],
             ),
           ),
           Positioned(
@@ -112,37 +109,35 @@ class FeedCard1 extends StatelessWidget {
             right: 0.0,
             child: Padding(
               padding: EdgeInsets.only(left: 10.0, right: 10.0),
-              child: Container(
-                height: 200.0,
-                width: 20.0,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(14.0),
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 0.0,
-                      color: Colors.white,
-                      spreadRadius: 0.0,
-                    )
-                  ],
-                ),
-                child: Padding(
-                  padding: EdgeInsets.only(
-                    top: 20.0,
-                    bottom: 00.0,
-                    left: 20.0,
-                    right: 20.0,
+              child: Material(
+                elevation: 5.0,
+                shadowColor: Colors.white,
+                borderRadius: BorderRadius.circular(14.0),
+                child: Container(
+                  height: 200.0,
+                  width: 20.0,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(14.0),
                   ),
-                  child: Column(
-                    children: <Widget>[
-                      header,
-                      SizedBox(
-                        height: 10.0,
-                      ),
-                      descriptionText,
-                      divider,
-                      footer
-                    ],
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      top: 20.0,
+                      bottom: 00.0,
+                      left: 20.0,
+                      right: 20.0,
+                    ),
+                    child: Column(
+                      children: <Widget>[
+                        header,
+                        SizedBox(
+                          height: 10.0,
+                        ),
+                        descriptionText,
+                        divider,
+                        footer
+                      ],
+                    ),
                   ),
                 ),
               ),

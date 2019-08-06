@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_social/_routing/routes.dart';
 import 'package:flutter_social/views/chat_details.dart';
-import 'package:flutter_social/views/chats.dart';
-import 'package:flutter_social/views/feeds.dart';
 import 'package:flutter_social/views/home.dart';
+import 'package:flutter_social/views/tabs/chats.dart';
+import 'package:flutter_social/views/tabs/feeds.dart';
+import 'package:flutter_social/views/landing.dart';
 import 'package:flutter_social/views/login.dart';
-import 'package:flutter_social/views/notifications.dart';
-import 'package:flutter_social/views/profile.dart';
+import 'package:flutter_social/views/tabs/notifications.dart';
+import 'package:flutter_social/views/tabs/profile.dart';
 import 'package:flutter_social/views/register.dart';
 import 'package:flutter_social/views/reset_password.dart';
 
 Route<dynamic> generateRoute(RouteSettings settings) {
   switch (settings.name) {
+    case landingViewRoute:
+      return MaterialPageRoute(builder: (context) => LandingPage());
     case homeViewRoute:
       return MaterialPageRoute(builder: (context) => HomePage());
     case loginViewRoute:
@@ -32,6 +35,6 @@ Route<dynamic> generateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => ProfilePage());
       break;
     default:
-      return MaterialPageRoute(builder: (context) => HomePage());
+      return MaterialPageRoute(builder: (context) => LandingPage());
   }
 }
