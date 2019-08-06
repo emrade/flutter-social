@@ -7,21 +7,6 @@ import 'package:flutter_social/widgets/feed_card3.dart';
 class FeedsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final appBar = Padding(
-      padding: EdgeInsets.only(right: 15.0, left: 15.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          IconButton(
-            onPressed: () => Navigator.pop(context),
-            icon: Icon(
-              Icons.arrow_back,
-              color: Colors.black,
-            ),
-          )
-        ],
-      ),
-    );
 
     final pageTitle = Padding(
       padding: EdgeInsets.only(top: 1.0, bottom: 30.0),
@@ -44,9 +29,8 @@ class FeedsPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              appBar,
               Container(
-                padding: EdgeInsets.only(left: 30.0, right: 30.0),
+                padding: EdgeInsets.only(top: 30.0, left: 30.0, right: 30.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[

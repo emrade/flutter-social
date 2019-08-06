@@ -4,6 +4,7 @@ class User {
   int id;
   String name;
   String photo;
+  String location = 'Seattle, USA.';
 
   User(this.id, this.name, this.photo);
 }
