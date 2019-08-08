@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
         BottomNavigationBarItem(
           icon: Icon(LineIcons.comments),
           title: Text(
-            'Chat',
+            'Chats',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
         ),
