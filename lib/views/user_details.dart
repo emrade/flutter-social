@@ -175,7 +175,7 @@ class UserDetailsPage extends StatelessWidget {
                 height: 5.0,
               ),
               Text(
-                "Hobbies",
+                "HOBBIES",
                 style: TextStyle(
                   color: Colors.black,
                   fontSize: 18.0,
