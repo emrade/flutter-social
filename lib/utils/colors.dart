@@ -19,4 +19,14 @@ const primaryGradient = const LinearGradient(
   end: Alignment.bottomCenter,
 );
 
-const menuBarColor = const Color(0x552B2B2B);
+const chatBubbleGradient = const LinearGradient(
+  colors: const [Color(0xFFFD60A3), Color(0xFFFF8961)],
+  begin: Alignment.topRight,
+  end: Alignment.bottomLeft,
+);
+
+const chatBubbleGradient2 = const LinearGradient(
+  colors: const [Color(0xFFf4e3e3), Color(0xFFf4e3e3)],
+  begin: Alignment.topRight,
+  end: Alignment.bottomLeft,
+);

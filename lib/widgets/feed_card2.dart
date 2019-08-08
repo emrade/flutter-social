@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social/_routing/routes.dart';
 import 'package:flutter_social/models/feed.dart';
 
 class FeedCard2 extends StatelessWidget {
@@ -10,17 +11,24 @@ class FeedCard2 extends StatelessWidget {
     final userImage = Positioned(
       left: 0,
       top: 15.0,
-      child: Material(
-        elevation: 5.0,
-        borderRadius: BorderRadius.circular(14.0),
-        child: Container(
-          height: 120.0,
-          width: 120.0,
-          decoration: BoxDecoration(
+      child: InkWell(
+        onTap: () => Navigator.pushNamed(context, userDetailsViewRoute,
+            arguments: feed.userId),
+        child: Hero(
+          tag: feed.userImage,
+          child: Material(
+            elevation: 5.0,
             borderRadius: BorderRadius.circular(14.0),
-            image: DecorationImage(
-              image: AssetImage(feed.userImage),
-              fit: BoxFit.cover,
+            child: Container(
+              height: 120.0,
+              width: 120.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(14.0),
+                image: DecorationImage(
+                  image: AssetImage(feed.userImage),
+                  fit: BoxFit.cover,
+                ),
+              ),
             ),
           ),
         ),

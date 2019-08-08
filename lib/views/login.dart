@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_social/_routing/routes.dart';
 import 'package:flutter_social/utils/colors.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:flutter/services.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -13,6 +14,10 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    // Change Status Bar Color
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: primaryColor),
+    );
     final pageTitle = Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[

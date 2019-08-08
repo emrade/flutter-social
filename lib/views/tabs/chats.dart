@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_social/_routing/routes.dart';
 import 'package:flutter_social/models/chat.dart';
 import 'package:flutter_social/models/user.dart';
 import 'package:flutter_social/utils/colors.dart';
@@ -59,7 +60,7 @@ class ChatsPage extends StatelessWidget {
       height: 100.0,
       child: ListView(
         scrollDirection: Axis.horizontal,
-        children: users.map((user) => _buildUserCard(user)).toList(),
+        children: users.map((user) => _buildUserCard(user, context)).toList(),
       ),
     );
 
@@ -80,7 +81,7 @@ class ChatsPage extends StatelessWidget {
     final chatList = Container(
       height: 500.0,
       child: ListView(
-        children: chats.map((chat) => _buildChatTile(chat)).toList(),
+        children: chats.map((chat) => _buildChatTile(chat, context)).toList(),
       ),
     );
 
@@ -111,7 +112,7 @@ class ChatsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildUserCard(User user) {
+  Widget _buildUserCard(User user, BuildContext context) {
     final firstName = user.name.split(" ")[0];
 
     final onlineTag = Positioned(
@@ -129,22 +130,25 @@ class ChatsPage extends StatelessWidget {
     );
     return Column(
       children: <Widget>[
-        Stack(
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.only(right: 8.0),
-              height: 70.0,
-              width: 70.0,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(user.photo),
-                  fit: BoxFit.cover,
+        InkWell(
+          onTap: () => Navigator.pushNamed(context, chatDetailsViewRoute, arguments: user.id),
+          child: Stack(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.only(right: 8.0),
+                height: 70.0,
+                width: 70.0,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(user.photo),
+                    fit: BoxFit.cover,
+                  ),
+                  shape: BoxShape.circle,
                 ),
-                shape: BoxShape.circle,
               ),
-            ),
-            onlineTag
-          ],
+              onlineTag
+            ],
+          ),
         ),
         Text(
           firstName,
@@ -154,7 +158,7 @@ class ChatsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildChatTile(Chat chat) {
+  Widget _buildChatTile(Chat chat, BuildContext context) {
     final unreadCount = Positioned(
       bottom: 9.0,
       right: 0.0,
@@ -175,48 +179,73 @@ class ChatsPage extends StatelessWidget {
       ),
     );
 
-    final userImage = Stack(
-      children: <Widget>[
-        Container(
-          margin: EdgeInsets.only(right: 8.0, bottom: 10.0),
-          height: 70.0,
-          width: 70.0,
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage(chat.userImage),
-              fit: BoxFit.cover,
+    final userImage = InkWell(
+      onTap: () {
+        Navigator.pushNamed(
+          context,
+          userDetailsViewRoute,
+          arguments: chat.userId,
+        );
+      },
+      child: Stack(
+        children: <Widget>[
+          Hero(
+            tag: chat.userImage,
+            child: Container(
+              margin: EdgeInsets.only(right: 8.0, bottom: 10.0),
+              height: 70.0,
+              width: 70.0,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(chat.userImage),
+                  fit: BoxFit.cover,
+                ),
+                shape: BoxShape.circle,
+              ),
             ),
-            shape: BoxShape.circle,
           ),
-        ),
-        unreadCount
-      ],
+          chat.unreadCount == 0 ? Container() : unreadCount
+        ],
+      ),
     );
 
     final userNameMessage = Expanded(
-      child: Container(
-        padding: EdgeInsets.only(
-          left: 10.0,
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Text(
-              chat.userName,
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20.0,
+      child: InkWell(
+        onTap: () {
+          Navigator.pushNamed(
+            context,
+            chatDetailsViewRoute,
+            arguments: chat.userId,
+          );
+        },
+        child: Container(
+          padding: EdgeInsets.only(
+            left: 10.0,
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Hero(
+                tag: chat.userName,
+                child: Text(
+                  chat.userName,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20.0,
+                  ),
+                ),
               ),
-            ),
-            Text(
-              chat.message,
-              style: TextStyle(
+              Text(
+                chat.message,
+                style: TextStyle(
                   fontWeight: FontWeight.w600,
                   fontSize: 18.0,
-                  color: Colors.grey.withOpacity(0.6)),
-              overflow: TextOverflow.ellipsis,
-            ),
-          ],
+                  color: Colors.grey.withOpacity(0.6),
+                ),
+                overflow: TextOverflow.ellipsis,
+              ),
+            ],
+          ),
         ),
       ),
     );

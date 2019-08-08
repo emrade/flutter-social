@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_social/_routing/routes.dart';
 import 'package:flutter_social/models/feed.dart';
 import 'package:line_icons/line_icons.dart';
 
@@ -8,14 +9,21 @@ class FeedCard1 extends StatelessWidget {
   const FeedCard1({Key key, this.feed}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final userimage = Container(
-      margin: EdgeInsets.only(right: 10.0),
-      height: 40.0,
-      width: 40.0,
-      decoration: BoxDecoration(
-        image: DecorationImage(
-            image: AssetImage(feed.userImage), fit: BoxFit.cover),
-        borderRadius: BorderRadius.circular(7.0),
+    final userimage = InkWell(
+      onTap: () => Navigator.pushNamed(context, userDetailsViewRoute,
+          arguments: feed.userId),
+      child: Hero(
+        tag: feed.userImage,
+        child: Container(
+          margin: EdgeInsets.only(right: 10.0),
+          height: 40.0,
+          width: 40.0,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage(feed.userImage), fit: BoxFit.cover),
+            borderRadius: BorderRadius.circular(7.0),
+          ),
+        ),
       ),
     );
 

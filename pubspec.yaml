@@ -55,6 +55,7 @@ flutter:
    - assets/images/woman5.jpg
    - assets/images/home_page.png
    - assets/images/logo.png
+   - assets/images/empty.png
    - assets/images/post_banner.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see

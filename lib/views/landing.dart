@@ -2,10 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_social/_routing/routes.dart';
 import 'package:flutter_social/utils/colors.dart';
 import 'package:flutter_social/utils/utils.dart';
+import 'package:flutter/services.dart';
 
 class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    // Change Status Bar Color
+    SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: primaryColor),
+    );
+
     final logo = Container(
       height: 100.0,
       width: 100.0,
