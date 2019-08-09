@@ -1,4 +1,4 @@
-# Flutter UI for Social Media App - Heart String
+# Flutter Social (Heart String) - A UI for a Social Media App 
 
 A Flutter UI implementation of a social media application
 
